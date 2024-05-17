@@ -11,9 +11,9 @@ document.addEventListener("keyup", event => {
 
 const myBox = document.getElementById("myBox");
 
-const moveAmount = 10;
-let y = 0;
-let x = 0;
+const moveAmount = 20;
+let a = 0;
+let b = 0;
 
 document.addEventListener("keydown", event => {
     myBox.textContent = "😲";
@@ -28,26 +28,26 @@ document.addEventListener("keyup", event => {
 document.addEventListener("keydown", event => {
     
     if (event.key.startsWith("Arrow")) {
+
+        event.preventDefault();
+
         switch (event.key) {
             case "ArrowUp":
-                y -= moveAmount;
+                a -= moveAmount;
                 break;
             case "ArrowDown": 
-                y += moveAmount;
+                a += moveAmount;
                 break;
             case "ArrowLeft": 
-                x -= moveAmount;
+                b -= moveAmount;
                 break;
             case "ArrowRight": 
-                x += moveAmount;
+                b += moveAmount;
                 break;
         }
-        myBox.style.top = `${y}px`;
-        myBox.style.left = `${x}px`;
+        myBox.style.top = `${a}px`;
+        myBox.style.left = `${b}px`;
     }
 })
-
-
-
 
 
